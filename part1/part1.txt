@@ -1,0 +1,7 @@
+==================================================
+Part 1 Objectives
+==================================================
+
+- Index page to control 'landing'
+- Set up basic views for guestbook
+- Set up reusable navigation controls

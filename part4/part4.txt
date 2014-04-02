@@ -1,0 +1,5 @@
+==================================================
+Part 4 Objectives
+==================================================
+
+- Add form validation and communication between pages (HTTP GET)

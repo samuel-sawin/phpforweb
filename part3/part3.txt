@@ -1,0 +1,6 @@
+==================================================
+Part 3 Objectives
+==================================================
+
+- Add styles to the page using CSS
+- Add ability to sign the guestbook (HTTP POST)

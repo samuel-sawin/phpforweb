@@ -1,0 +1,6 @@
+==================================================
+Part 2 Objectives
+==================================================
+
+- Add html to guestbook views
+- Establish connection with sql server
